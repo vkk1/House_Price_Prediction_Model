@@ -34,13 +34,13 @@ house_price_dataframe['rooms_per_bathroom'] = house_price_dataframe['bedrooms'] 
 
 
 # Constructing Heatmap
-'''
+
 correlation = house_price_dataframe.corr()
 
 plt.figure(figsize = (10, 10))
 sns.heatmap(correlation, cbar = True, square = True, fmt = '.1f', annot = True, annot_kws = {'size': 8}, cmap = 'Blues')
 plt.show()
-'''
+
 
 
 
@@ -102,12 +102,14 @@ test_mae = metrics.mean_absolute_error(Y_test, testing_data_prediction)
 # Mean Absolute Percentage Error
 test_mpe = metrics.mean_absolute_percentage_error(Y_test, testing_data_prediction)
 
+print(f"Testing data Prediction: {testing_data_prediction}")
+print(f"Test r Square: {test_r_square}")
+print(f"Test mae: {test_mae}")
+print(f"Test mpe: {test_mpe}")
 
-'''
 # Constructing a scatter plot (helps show relationship)
 plt.scatter(Y_train, training_data_prediction)
 plt.xlabel('Actual Price')
 plt.ylabel('Predicted Price')
 plt.title('Actual Price vs Predicted Price')
 plt.show()
-'''
